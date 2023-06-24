@@ -8,9 +8,9 @@ import {
 import '../css/sidebar.css';
 
 export default function RightSidebar() {
-	const [sortOption, setSortOption] = useState('latest');
+	const [sortOption, setSortOption] = useState(true);
 	const handleSort = () => {
-		setSortOption('mostUpvoted');
+		setSortOption(!sortOption);
 	};
 
 	return (
@@ -20,10 +20,10 @@ export default function RightSidebar() {
 					<FontAwesomeIcon icon={faUser} />
 				</div>
 				<div className="toggle-text">
-					{sortOption === 'latest' ? 'Latest' : 'Most Upvoted'}
+					{sortOption === true ? 'Latest' : 'Most Upvoted'}
 				</div>
 				<div className="icon">
-					{sortOption === 'latest' ? (
+					{sortOption === true ? (
 						<FontAwesomeIcon icon={faArrowUp} />
 					) : (
 						<FontAwesomeIcon icon={faArrowDown} />

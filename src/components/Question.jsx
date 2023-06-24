@@ -9,6 +9,7 @@ import {
 import '../css/question.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {timeAgo} from '../utils/services'
 
 export default function Question({ question }) {
 	let {
@@ -30,41 +31,8 @@ export default function Question({ question }) {
 	const [bookmark, setBookmark] = useState(isBookmarked);
 	const navigate = useNavigate();
 
-	const timeAgo = date => {
-		const seconds = Math.floor((new Date() - date) / 1000);
-
-		let interval = Math.floor(seconds / 31536000);
-		if (interval > 1) {
-			return interval + ' years ago';
-		}
-
-		interval = Math.floor(seconds / 2592000);
-		if (interval > 1) {
-			return interval + ' months ago';
-		}
-
-		interval = Math.floor(seconds / 86400);
-		if (interval > 1) {
-			return interval + ' days ago';
-		}
-
-		interval = Math.floor(seconds / 3600);
-		if (interval > 1) {
-			return interval + ' hours ago';
-		}
-
-		interval = Math.floor(seconds / 60);
-		if (interval > 1) {
-			return interval + ' minutes ago';
-		}
-
-		if (seconds < 10) return 'just now';
-
-		return Math.floor(seconds) + ' seconds ago';
-	};
-
 	const time = timeAgo(createdAt);
-	console.log('Time ago', time);
+	//console.log('Time ago', time);
 
 	const upvoteHandler = () => {
 		setVote(prevVote => ({
@@ -95,14 +63,14 @@ export default function Question({ question }) {
 					<FontAwesomeIcon icon={faArrowDown} onClick={() => downvoteHandler} />
 				</div>
 			</div>
-			<div className="post-details-container">
+			<div >
 				<div className="posted-by">
 					<div className="user-pic">
 						<img src={picUrl} alt="User Profile" />
 					</div>
 					<div>
-						<div className="username">{username}</div>
 						<div className="name">{name}</div>
+						<div className="username">{username}</div>
 						<div className="time-ago">{time}</div>
 					</div>
 				</div>
