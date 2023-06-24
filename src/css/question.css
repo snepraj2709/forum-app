@@ -1,0 +1,88 @@
+.question-detail-container {
+	display: grid;
+	grid-template-columns: 5% 95%;
+	gap: 10px;
+	padding: 10px;
+	background-color: #f2f2f2;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.upvote-downvote-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.vote-icons {
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.post-details {
+	/* display: flex; */
+	/* flex-direction: column; */
+	background-color: whitesmoke;
+	/* border: 1px solid #ccc; */
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.posted-by {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.user-pic img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.username {
+	font-weight: bold;
+}
+
+.name {
+	color: #555;
+}
+
+.time-ago {
+	color: #888;
+}
+
+.post-heading {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.tag-pills-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+.tag-pills-container div {
+	background-color: #cccc;
+	color: #333;
+	padding: 5px 10px;
+	border-radius: 15px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+.post-description {
+	margin-bottom: 10px;
+}
+
+.icon-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.icon {
+	margin: 0px 10px;
+	cursor: pointer;
+}

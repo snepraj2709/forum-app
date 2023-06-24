@@ -1,0 +1,33 @@
+.button {
+	display: inline-block;
+	background-color: #f2f2f2;
+	border: none;
+	color: #000;
+	text-align: center;
+	font-size: 16px;
+	padding: 10px;
+	width: 100px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.card {
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.user-icon {
+	margin-right: 5px;
+}
+
+.toggle-text {
+	flex-grow: 1;
+}
+
+.icon {
+	margin-left: 5px;
+}

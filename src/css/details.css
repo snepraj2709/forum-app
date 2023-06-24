@@ -1,0 +1,10 @@
+.question-details-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.goback-container {
+	display: flex;
+	flex-direction: row;
+	margin-left: 10px;
+}
