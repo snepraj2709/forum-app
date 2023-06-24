@@ -9,7 +9,7 @@ import {
 import '../css/question.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {timeAgo} from '../utils/services'
+import {useData} from '../context/DataContext'
 
 export default function Question({ question }) {
 	let {
@@ -29,10 +29,10 @@ export default function Question({ question }) {
 	const [vote, setVote] = useState({ up: upvotes, down: downvotes });
 	const [voteDifference, setVoteDifference] = useState(vote.up - vote.down);
 	const [bookmark, setBookmark] = useState(isBookmarked);
+	const {timeAgo}=useData();
 	const navigate = useNavigate();
 
 	const time = timeAgo(createdAt);
-	//console.log('Time ago', time);
 
 	const upvoteHandler = () => {
 		setVote(prevVote => ({

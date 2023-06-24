@@ -6,24 +6,22 @@ import {
 	faArrowDown
 } from '@fortawesome/free-solid-svg-icons';
 import '../css/sidebar.css';
+import {useData} from '../context/DataContext'
 
 export default function RightSidebar() {
-	const [sortOption, setSortOption] = useState(true);
-	const handleSort = () => {
-		setSortOption(!sortOption);
-	};
+	const {timeAgo,trending,setTrending,sort}=useData()
 
 	return (
-		<div className="button" onClick={handleSort}>
+		<div className="button" onClick={()=>setTrending(!trending)}>
 			<div className="card">
 				<div className="user-icon">
 					<FontAwesomeIcon icon={faUser} />
 				</div>
 				<div className="toggle-text">
-					{sortOption === true ? 'Latest' : 'Most Upvoted'}
+					{trending === true ? 'Latest' : 'Most Upvoted'}
 				</div>
 				<div className="icon">
-					{sortOption === true ? (
+					{trending === true ? (
 						<FontAwesomeIcon icon={faArrowUp} />
 					) : (
 						<FontAwesomeIcon icon={faArrowDown} />

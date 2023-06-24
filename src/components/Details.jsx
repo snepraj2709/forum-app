@@ -10,21 +10,22 @@ import {
 	faShare,
 	faBookmark
 } from '@fortawesome/free-solid-svg-icons';
-import {timeAgo} from '../utils/services'
+import {useData} from '../context/DataContext'
 
 
 export default function Details({ question }) {
 	const [bookmark, setBookmark] = useState(isBookmarked);
 	const navigate = useNavigate();
+	const {timeAgo}=useData()
 	let {
-		postId,
 		username,
 		name,
 		picUrl,
 		comments,
 		isBookmarked,createdAt
 	} = question;
-const time = timeAgo(createdAt);
+	
+	const time = timeAgo(createdAt);
 
 	return (
 		<div className="question-details-container">
@@ -48,7 +49,7 @@ const time = timeAgo(createdAt);
 				</div>
 				<div>
 					{comments.map(({commentId,comment}) =>
-					<p>{comment}</p>
+					<p key={commentId}>{comment}</p>
 					)}	
 				</div>
 
@@ -57,9 +58,7 @@ const time = timeAgo(createdAt);
 							<FontAwesomeIcon
 								icon={faComment}
 								className="icon"
-								 onClick={() => navigate(`/question/${postId}`)}
 							/>
-							<>{comments.length}</>
 						</div>
 
 						<FontAwesomeIcon icon={faShare} />
