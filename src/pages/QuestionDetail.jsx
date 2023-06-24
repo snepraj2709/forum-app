@@ -3,12 +3,12 @@ import Details from '../components/Details';
 import { forumData } from '../data/data';
 import { useParams } from "react-router-dom";
 
-export default function QuestionDetail({ question }) {
-	console.log('Question details of', question);
-	const questionId=useParams()
-	//console.log('Question id:', questionId)
-	const item=forumData.find((element)=>element.posts.postId===questionId)
-
+export default function QuestionDetail() {
+	
+	const {questionId}=useParams()
+	console.log('Forum data id:', forumData.posts[0].postId)
+	const item=forumData.posts?.find((element)=>element.postId===questionId)
+	console.log('Question Post:', item)
 	return (
 		<div className="home-container">
 			<LeftSidebar />

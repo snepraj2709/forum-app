@@ -29,7 +29,6 @@ export default function Question({ question }) {
 	const [voteDifference, setVoteDifference] = useState(vote.up - vote.down);
 	const [bookmark, setBookmark] = useState(isBookmarked);
 	const navigate = useNavigate();
-	//console.log('Votes', vote);
 
 	const timeAgo = date => {
 		const seconds = Math.floor((new Date() - date) / 1000);
@@ -73,7 +72,6 @@ export default function Question({ question }) {
 			up: ++prevVote.up
 		}));
 		setVoteDifference(vote.up - vote.down);
-		console.log('Upvoted by 1', vote.up);
 	};
 
 	const downvoteHandler = () => {
@@ -82,9 +80,6 @@ export default function Question({ question }) {
 			down: ++prevVote.down
 		}));
 		setVoteDifference(vote.up - vote.down);
-		console.log('Downvoted by 1', vote.down);
-		console.log('Vote', vote);
-		console.log('Vote Difference', vote.up - vote.down);
 	};
 
 	useEffect(() => {
