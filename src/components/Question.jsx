@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-	faArrowUp,
-	faArrowDown,
+	faCaretDown,
+	faCaretUp,
+	
 	faComment,
 	faShare,
 	faBookmark
@@ -38,7 +39,7 @@ export default function Question({ question }) {
 		setVote(prevVote => ({
 			...prevVote,
 			up: ++prevVote.up
-		}));
+		}));	
 		setVoteDifference(vote.up - vote.down);
 	};
 
@@ -58,9 +59,10 @@ export default function Question({ question }) {
 		<div className="question-detail-container">
 			<div className="upvote-downvote-container">
 				<div className="vote-icons">
-					<FontAwesomeIcon icon={faArrowUp} onClick={() => upvoteHandler} />
+					
+					<FontAwesomeIcon icon={faCaretUp} onClick={upvoteHandler} />
 					<div>{voteDifference}</div>
-					<FontAwesomeIcon icon={faArrowDown} onClick={() => downvoteHandler} />
+					<FontAwesomeIcon icon={faCaretDown} onClick={downvoteHandler} />
 				</div>
 			</div>
 			<div >
