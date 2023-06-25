@@ -2,12 +2,12 @@ export default function LeftSidebar() {
 	return (
 		<div className="left-sidebar-container">
 			<div className="sidebar-item">
-				<i class="fa-solid fa-house"></i>
+				<i className="fa-solid fa-house"></i>
 				<p>Home</p>
 			</div>
 
 			<div className="sidebar-item">
-				<i class="fa-solid fa-rocket"></i>
+				<i className="fa-solid fa-rocket"></i>
 				<p>Explore</p>
 			</div>
 
@@ -17,7 +17,7 @@ export default function LeftSidebar() {
 			</div>
 
 			<div className="sidebar-item">
-				<i class="fa-solid fa-user"></i>
+				<i className="fa-solid fa-user"></i>
 				<p>Profile</p>
 			</div>
 		</div>
