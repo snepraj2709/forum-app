@@ -20,13 +20,6 @@ export default function RightSidebar() {
 				<div className="toggle-text">
 					{trending === true ? 'Latest' : 'Most Upvoted'}
 				</div>
-				<div className="icon">
-					{trending === true ? (
-						<FontAwesomeIcon icon={faArrowUp} />
-					) : (
-						<FontAwesomeIcon icon={faArrowDown} />
-					)}
-				</div>
 			</div>
 		</div>
 	);

@@ -7,7 +7,9 @@ export default function Feed() {
 		<div>
 			<h2>Latest posts</h2>
 			{posts.map(item => (
+				<div key={item.postId}>
 				<Question question={item} />
+				</div>
 			))}
 		</div>
 	);

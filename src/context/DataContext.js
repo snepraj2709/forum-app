@@ -45,7 +45,7 @@ export const DataProvider = ({ children }) => {
       const postTime = { id: postId, time: timeAgo(createdAt) };
       return postTime;
     });
-    console.log("time array", allPostedTime);
+    console.log("time array with Id", allPostedTime);
   };
 
   useEffect(() => {
