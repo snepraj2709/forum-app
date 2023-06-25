@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faCaretDown,
 	faCaretUp,
-	
 	faComment,
 	faShare,
 	faBookmark

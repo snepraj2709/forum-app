@@ -5,7 +5,6 @@ import Question from './Question';
 import { useNavigate } from 'react-router-dom';
 import {  useState } from 'react';
 import {
-
 	faComment,
 	faShare,
 	faBookmark
@@ -14,7 +13,6 @@ import {useData} from '../context/DataContext'
 
 
 export default function Details({ question }) {
-	const [bookmark, setBookmark] = useState(isBookmarked);
 	const navigate = useNavigate();
 	const {timeAgo}=useData()
 	let {
@@ -24,7 +22,7 @@ export default function Details({ question }) {
 		comments,
 		isBookmarked,createdAt
 	} = question;
-	
+	const [bookmark, setBookmark] = useState(isBookmarked);
 	const time = timeAgo(createdAt);
 
 	return (
